@@ -1,0 +1,65 @@
+body {
+	font-family: sans-serif;
+	background: url('bg/bg4.jpg') no-repeat center center fixed;
+	background-size: cover;
+	padding: 0;
+	margin: 0;
+}
+#life, #poison {
+	background: rgba(255, 255, 255, .3);
+	border-radius: 10px;
+	border-top: 1px solid white;
+	border-bottom: 1px solid #828282;
+	margin: 10px;
+	padding: 20px;
+}
+.header, #lifecounter, #poisoncounter {
+	font-size: 2.5em;
+	text-align: center;
+	line-height: 1em;
+}
+.add, .remove {
+	text-align: center;
+}
+ul, li {
+	padding: 0;
+	margin: 0;
+}
+.add, .remove {
+	width: 100%;
+	margin: 0 auto;
+}
+.add li, .remove li {
+	list-style: none;
+	margin: auto 1.5em;
+	padding: 10px;
+	float: left;
+}
+#life .add li {
+	background-color: rgba(62, 215, 32, .7);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#life .remove li {
+	background-color: rgba(215, 32, 32, .7);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+#poison .add li {
+	background-color: rgba(215, 32, 32, .7);
+	border-top-left-radius: 5px;
+	border-top-right-radius: 5px;
+}
+#poison .remove li {
+	background-color: rgba(62, 215, 32, .7);
+	border-bottom-left-radius: 5px;
+	border-bottom-right-radius: 5px;
+}
+li a {
+	display: block;
+	width: 80px;
+	height: 80px;
+}
+.clear {
+	clear: both;
+}
