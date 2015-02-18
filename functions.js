@@ -1,22 +1,28 @@
 $(document).ready(function(){
-	var lifes = localStorage.getItem("lifes");
-	if (lifes){
-		document.getElementById("lifecounter").innerHTML = lifes;
+	/* Define Life and Poison default values and use them when nothing is stored locally */
+	function lifeset(){
+		lifes = localStorage.getItem("lifes");
+		if (lifes){
+			document.getElementById("lifecounter").innerHTML = lifes;
+		}
+		else {
+			localStorage.setItem("lifes", "20");
+			document.getElementById("lifecounter").innerHTML = lifes;
+		}
 	}
-	else {
-		localStorage.setItem("lifes", "20");
-		document.getElementById("lifecounter").innerHTML = lifes;
+	function poisonset(){
+		poisons = localStorage.getItem("poisons");
+		if (poisons){
+			document.getElementById("poisoncounter").innerHTML = poisons;
+		}
+		else {
+			localStorage.setItem("poisons", "0");
+			document.getElementById("poisoncounter").innerHTML = poisons;
+		}
 	}
-
-	poisons = localStorage.getItem("poisons");
-	if (poisons){
-		document.getElementById("poisoncounter").innerHTML = poisons;
-	}
-	else {
-		localStorage.setItem("poisons", "0");
-		document.getElementById("poisoncounter").innerHTML = poisons;
-	}
-
+	lifeset();
+	poisonset();
+	/* Life Counters */
 	addOneLife = function() {
 		lifes = parseInt(lifes) + 1;
 		document.getElementById("lifecounter").innerHTML = lifes;
@@ -32,7 +38,6 @@ $(document).ready(function(){
 		document.getElementById("lifecounter").innerHTML = lifes;
 		localStorage.setItem("lifes", lifes);
 	}
-
 	remOneLife = function() {
 		lifes = parseInt(lifes) - 1;
 		document.getElementById("lifecounter").innerHTML = lifes;
@@ -48,8 +53,7 @@ $(document).ready(function(){
 		document.getElementById("lifecounter").innerHTML = lifes;
 		localStorage.setItem("lifes", lifes);
 	}
-
-
+	/* Poison Counters */
 	addOnePoison = function() {
 		poisons = parseInt(poisons) + 1;
 		document.getElementById("poisoncounter").innerHTML = poisons;
@@ -60,7 +64,6 @@ $(document).ready(function(){
 		document.getElementById("poisoncounter").innerHTML = poisons;
 		localStorage.setItem("poisons", poisons);
 	}
-
 	remOnePoison = function() {
 		poisons = parseInt(poisons) - 1;
 		document.getElementById("poisoncounter").innerHTML = poisons;
@@ -71,9 +74,11 @@ $(document).ready(function(){
 		document.getElementById("poisoncounter").innerHTML = poisons;
 		localStorage.setItem("poisons", poisons);
 	}
-
+	/* Delete local storage, reset all counters */
 	reset = function() {
 		localStorage.clear();
 		window.location.reload();
+		lifeset();
+		poisonset();
 	}
 });
