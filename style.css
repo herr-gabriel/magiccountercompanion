@@ -20,6 +20,14 @@ body {
 	line-height: 1em;
 	margin-top:0;
 }
+.immortal {
+	text-align: center;
+	margin-top:-30px;
+	font-size:1.5em;
+	font-weight: heavy;
+	color: rgb(62, 215, 32);
+	text-shadow: 0px 0px 10px rgba(32, 114, 43, 1);
+}
 ul, li {
 	padding: 0;
 	margin: 0;

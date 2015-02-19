@@ -20,8 +20,14 @@ $(document).ready(function(){
 			document.getElementById("poisoncounter").innerHTML = poisons;
 		}
 	}
+	/* Turn on immortality (removes death check) */
+	immortal = function(){
+		$(".immortal").toggle();
+	}
 	lifeset();
 	poisonset();
+	/* Turn off immortality at beginning of round by default */
+	immortal();
 	/* Life Counters */
 	addOneLife = function() {
 		lifes = parseInt(lifes) + 1;
