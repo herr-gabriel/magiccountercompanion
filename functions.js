@@ -22,6 +22,7 @@ $(document).ready(function(){
 	}
 	/* Turn on immortality (removes death check) */
 	immortal = function(){
+		$("html, body").animate({scrollTop: 0}, 'fast');		
 		$(".immortal").toggle();
 	}
 	lifeset();
