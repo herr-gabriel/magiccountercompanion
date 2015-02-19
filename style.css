@@ -12,14 +12,13 @@ body {
 	border-bottom: 1px solid #828282;
 	margin: 10px;
 	padding: 20px;
+	display:block;
 }
 .header, #lifecounter, #poisoncounter {
 	font-size: 2.5em;
 	text-align: center;
 	line-height: 1em;
-}
-.add, .remove {
-	text-align: center;
+	margin-top:0;
 }
 ul, li {
 	padding: 0;
@@ -28,12 +27,14 @@ ul, li {
 .add, .remove {
 	width: 100%;
 	margin: 0 auto;
+	text-align: center;
+	display:flex;
+	justify-content:center;
 }
 .add li, .remove li {
 	list-style: none;
 	margin: auto 1.5em;
 	padding: 10px;
-	float: left;
 }
 #life .add li {
 	background-color: rgba(62, 215, 32, .7);
@@ -62,4 +63,11 @@ li a {
 }
 .clear {
 	clear: both;
+}
+
+/* Responsiveness Queries */
+@media all and (max-width: 420px) and (min-width: 320px) {
+	.ten {
+		display: none;
+	}
 }
